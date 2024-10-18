@@ -15,9 +15,13 @@
           <img src="/t2.jpg" alt="Logo" class="logo" />
           <span>2.PCB</span>
         </router-link>
-        <router-link to="/page2" class="nav-link">
+        <router-link to="/page3" class="nav-link">
           <img src="/t3.jpg" alt="Logo" class="logo" />
           <span>3.焊接</span>
+        </router-link>
+        <router-link to="/page4" class="nav-link">
+          <img src="/t4.jpg" alt="Logo" class="logo" />
+          <span>4.焊接漫画</span>
         </router-link>
       </div>
     </nav>
@@ -66,25 +70,41 @@ export default {
 
 
     const timelineItems = [
-      {year: '24.10.19', image: './1.jpg', description: '实验室安全', dataText: '实验室安全问题', link: '/page1'},
+      {year: '24.10.19', image: './1.jpg', description: '实验室安全问题是最重要的，为了个人也为了队友的生命财产安全，请仔细阅读文档', dataText: '实验室安全问题', link: '/page1'},
 
-      {year: '24.10.19', image: './2.jpg', description: '初心高于胜负，成长大于输赢', dataText: 'PCB入门', link: '/page2'},
+      {year: '24.10.19', image: './2.jpg', description: '简单介绍了元器件，以及元器件挑选所需要注意的事项。写了嘉立创eda的下单流程，后续会把pcb小周边的工程上传（暂时没有上传）\n' +
+            '\n' +
+            '部分资料来源于：\n' +
+            '\n' +
+            '* 6302 Triz 实验室', dataText: 'PCB入门', link: '/page2'},
 
-      {year: '24.10.19', image: './3.jpg', description: '初心高于胜负，成长大于输赢', dataText: '焊接工具、焊接技巧', link: '/page3'},
+      {year: '24.10.19', image: './3.jpg', description: '注意安全使用工具，以防伤到自己或他人\n' +
+            '\n' +
+            '部分资料来源于：\n' +
+            '\n' +
+            '* 6302 Triz 实验室\n' +
+            '\n' +
+            '* 19级学长 冯元', dataText: '焊接工具、焊接技巧', link: '/page3'},
 
-      {year: '1_training', image: './4.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page4'},
+      {year: '24.10.19', image: './4.jpg', description: '注意安全使用工具，以防伤到自己或他人\n' +
+            '\n' +
+            '部分资料来源于：\n' +
+            '\n' +
+            '* 6302 Triz 实验室\n' +
+            '\n' +
+            '* 19级学长 冯元', dataText: '焊接漫画', link: '/page4'},
 
-      {year: '1_training', image: './5.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page5'},
+      {year: '2_training', image: './5.jpg', description: '初心高于胜负，成长大于输赢', dataText: '还未更新', link: '/page5'},
 
-      {year: '1_training', image: './6.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page6'},
+      {year: '3_training', image: './6.jpg', description: '初心高于胜负，成长大于输赢', dataText: '还未更新', link: '/page6'},
 
-      {year: '1_training', image: './7.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page7'},
+      {year: '4_training', image: './7.jpg', description: '初心高于胜负，成长大于输赢', dataText: '还未更新', link: '/page7'},
 
-      {year: '1_training', image: './8.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page8'},
+      {year: '5_training', image: './8.jpg', description: '初心高于胜负，成长大于输赢', dataText: '还未更新', link: '/page8'},
 
-      {year: '1_training', image: './9.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page9'},
+      {year: '6_training', image: './9.jpg', description: '初心高于胜负，成长大于输赢', dataText: '还未更新', link: '/page9'},
 
-      {year: '1_training', image: './10.jpg', description: '初心高于胜负，成长大于输赢', dataText: '初心高于胜负', link: '/page10'},
+      {year: '1_training', image: './10.jpg', description: '初心高于胜负，成长大于输赢', dataText: '还未更新', link: '/page10'},
 
     ];
 
@@ -155,6 +175,7 @@ export default {
   height: 100%;
   background: rgba(99, 99, 99, 0.8);
   content: "";
+  z-index: 0; /* 确保在最底层 */
 }
 
 .header {
@@ -270,6 +291,11 @@ export default {
 .img {
   max-width: 100%;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s; /* 添加平滑过渡 */
+}
+
+.img:hover {
+  transform: scale(1.05); /* 鼠标悬停时缩放到 1.05 倍 */
 }
 
 .subtitle {
@@ -313,10 +339,18 @@ export default {
   flex: 1; /* 让每个链接占据相同的空间 */
   display: flex; /* 使用 flexbox 布局 */
   align-items: center; /* 垂直居中对齐 */
-  color: white;
+  color: white; /* 默认文字颜色 */
   text-decoration: none;
   justify-content: center; /* 水平居中对齐内容 */
+  padding: 10px; /* 添加内边距 */
+  transition: background-color 0.3s, color 0.3s; /* 添加平滑过渡 */
 }
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时的背景颜色 */
+  color: #000; /* 鼠标悬停时的文字颜色 */
+}
+
 
 .nav-links {
   display: flex; /* 使用 flexbox 布局 */

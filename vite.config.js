@@ -14,7 +14,7 @@ export default defineConfig({
   // 新增的 GitHub Pages 相关配置
   base: '/Helios-hardware.github.io/', // 这是最重要的配置
   build: {
-    outDir: 'docs',       // 构建输出目录
+    outDir: 'dist',       // 构建输出目录
     assetsDir: './',      // 静态资源目录
     emptyOutDir: true     // 构建前清空输出目录
   }

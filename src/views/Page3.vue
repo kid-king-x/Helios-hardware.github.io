@@ -23,7 +23,7 @@ export default {
           id: 1,
           title: '',
           summary: '',
-          pdf: './焊接工具、焊接技巧.pdf', // PDF 文件路径
+          pdf: '/Helios-hardware.github.io/焊接工具、焊接技巧.pdf', // PDF 文件路径
         },
       ],
     };

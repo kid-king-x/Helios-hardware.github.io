@@ -23,7 +23,7 @@ export default {
           id: 1,
           title: '',
           summary: '',
-          pdf: './教你焊接的漫画.pdf', // PDF 文件路径
+          pdf: '/Helios-hardware.github.io/教你焊接的漫画.pdf', // PDF 文件路径
         },
       ],
     };

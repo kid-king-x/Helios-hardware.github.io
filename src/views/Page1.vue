@@ -38,7 +38,7 @@ export default {
           id: 1,
           title: '',
           summary: '',
-          pdf: './AAA实验室安全问题.pdf', // PDF 文件路径
+          pdf: '/Helios-hardware.github.io/AAA实验室安全问题.pdf', // PDF 文件路径
         },
       ],
     };

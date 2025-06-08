@@ -23,7 +23,7 @@ export default {
           id: 1,
           title: '',
           summary: '',
-          pdf: './PCB入门与初识元器件.pdf', // PDF 文件路径
+          pdf: '/Helios-hardware.github.io/PCB入门与初识元器件.pdf', // PDF 文件路径
         },
       ],
     };
